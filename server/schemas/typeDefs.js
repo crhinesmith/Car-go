@@ -3,6 +3,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type User {
     _id: ID
+
     firstName: String
     lastName: String
     email: String
@@ -49,6 +50,7 @@ const typeDefs = gql`
     addCarToWatchlist(products: [ID]!): Car
     carSold(_id: ID!): Car  
     login(email: String!, password: String!): Auth
+
   }
 `;
 
