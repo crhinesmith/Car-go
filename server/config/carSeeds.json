@@ -1,0 +1,122 @@
+[
+  {
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": "2013",
+    "mileage": 75899,
+    "price": 9999,
+    "image": "https://media.istockphoto.com/id/645591632/photo/toyota-corolla-parked-on-the-street-of-sochi-city-suburb-introduced-in-1966-the-corolla-was.jpg?s=612x612&w=0&k=20&c=ik_XqIT-vsRvm4vHZ0qyZod3Wsiru5mnEb9IaCs2sAQ="
+  },
+  {
+    "make": "Toyota",
+    "model": "4Runner",
+    "year": "2002",
+    "mileage": 150766,
+    "price": 7499,
+    "image": "https://media.istockphoto.com/id/1329081648/photo/toyota-4runner-suv-in-rock-desert-landscape-of-san-rafael-swell.jpg?s=612x612&w=is&k=20&c=Ftv356tOtoCIc_Z9Oe19VGzIlfpqI3LaRrrZks9pHZA="
+  },
+  {
+    "make": "Ford",
+    "model": "Escape",
+    "year": "2015",
+    "mileage": 60498,
+    "price": 13999,
+    "image": "https://media.istockphoto.com/id/507329663/photo/ford-kuga-titanium.jpg?s=612x612&w=is&k=20&c=YY6D14UwlUIZ_lEuNJ70vEqDEcXux2SD8o-TNKtcSsE="
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": "2019",
+    "mileage": 30892,
+    "price": 14999,
+    "image": "https://media.istockphoto.com/id/458119929/photo/new-honda-civic-front.jpg?s=612x612&w=0&k=20&c=uQ2YX6-9N4zJHcOpSfJJRRSSB-Sde28Bw3NUxBtgQQw="
+  },
+  {
+    "make": "Fiat",
+    "model": "500",
+    "year": "2020",
+    "mileage": 20189,
+    "price": 17999,
+    "image": "https://media.istockphoto.com/id/492426878/photo/fiat-500-engine.jpg?s=612x612&w=0&k=20&c=t1YjSty3JfVf0S_ClkDCkUItlYiw250yivqRPYx3lj4="
+  },
+  {
+    "make": "Ford",
+    "model": "F-150",
+    "year": "2013",
+    "mileage": 75722,
+    "price": 25999,
+    "image": "https://media.istockphoto.com/id/1208697714/photo/2020-ford-f-150-pickup-truck.jpg?s=612x612&w=0&k=20&c=5K0SQR8Fdx7YVzqh4jJ2DbiLtZXOFM4_a5v8-O4P47A="
+  },
+  {
+    "make": "Dodge",
+    "model": "Ram",
+    "year": "2013",
+    "mileage": 91222,
+    "price": 19758,
+    "image": "https://media.istockphoto.com/id/1220222640/photo/ram-1500-pick-up-next-to-lake-in-a-sunset.jpg?s=612x612&w=0&k=20&c=4ez__xJOZolj9IM06Eqz8PHoXiU2ngKEjSDl0eQlfr0="
+  },
+  {
+    "make": "Toyota",
+    "model": "Avanza",
+    "year": "2013",
+    "mileage": 113000,
+    "price": 8999,
+    "image": "https://media.istockphoto.com/id/525809414/photo/toyota-avanza-car-mini-suv-car-for-urbun-user.jpg?s=612x612&w=0&k=20&c=wapQHJAiyXCpERcJ9JNUnm3jSzrBvrMhUWo2L2w9_oM="
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": "2013",
+    "mileage": 11999,
+    "price": 41999,
+    "image": "https://media.istockphoto.com/id/1313426093/photo/2021-tesla-model-3-performance-no-license-plate.jpg?s=612x612&w=0&k=20&c=RcDYoyUsFMj1QZ_S7eZAMdhxd62nR3hSDVOKJG8Co1U="
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": "2013",
+    "mileage": 99456,
+    "price": 11598,
+    "image": "https://media.istockphoto.com/id/590585220/photo/graphite-jeep-grand-cherokee-limited-2016.jpg?s=612x612&w=0&k=20&c=VjQj-t8nwdxTFkCSNB3sj3G60TrGQiKFh8WItj8i8o4="
+  },
+  {
+    "make": "Dodge",
+    "model": "Challenger",
+    "year": "2013",
+    "mileage": 159000,
+    "price": 8596,
+    "image": "https://media.istockphoto.com/id/530810354/photo/dodge-challenger-r-t.jpg?s=612x612&w=0&k=20&c=8uHUVIChzMSqdTMedk7iMQ4kiCIKJ2au_B0Ocznzl_0="
+  },
+  {
+    "make": "Mini",
+    "model": "Cooper",
+    "year": "2013",
+    "mileage": 113569,
+    "price": 5993,
+    "image": "https://media.istockphoto.com/id/1196847737/photo/red-mini-cooper-s-with-white-stripes-parked-in-front-of-cathedral-rock-in-sedona-arizona-as.jpg?s=612x612&w=0&k=20&c=aTIRhjj_Y9LOalaKTBRDqi8Ydn0ukKHcFXAM0FeDMDo="
+  },
+  {
+    "make": "BMW",
+    "model": "M3",
+    "year": "2013",
+    "mileage": 179562,
+    "price": 14563,
+    "image": "https://media.istockphoto.com/id/825855156/photo/bmw-m3.jpg?s=612x612&w=is&k=20&c=VIBO0Ki6SHKFoUcw-DbMnWneJ1BC9oJbD4JZZkvuskM="
+  },
+  {
+    "make": "Chrysler",
+    "model": "PT Cruiser",
+    "year": "2013",
+    "mileage": 99654,
+    "price": 6984,
+    "image": "https://media.istockphoto.com/id/1054025414/photo/chrysler-pt-cruiser-with-flames.jpg?s=612x612&w=0&k=20&c=NOnsWwtpgt9AaICMjOteHFhHW3VNr7Mw5VygZOajzvs="
+  },
+  {
+    "make": "Chrysler",
+    "model": "300",
+    "year": "2013",
+    "mileage": 165930,
+    "price": 6983,
+    "image": "https://media.istockphoto.com/id/521807590/photo/chrysler-300c.jpg?s=612x612&w=0&k=20&c=E7mEwx-wmNwwnpls4N3GZb66fsuGI2Rhfy74Qgtdmbo="
+  }
+]
