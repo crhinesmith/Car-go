@@ -31,7 +31,7 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1 justify-content-around">
+    <header className="d-flex justify-content-around py-1">
       <Link to="/">
         <span className="logo" role="img" aria-label="wheel">
           <h1>Car-G🛞</h1>

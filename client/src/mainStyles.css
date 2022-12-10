@@ -1,7 +1,7 @@
 :root {
   --primary: rgb(35, 47, 62);
   --secondary: rgb(238, 192, 132);
-  --tertiary: rgb(249, 123, 91);
+  --tertiary: rgb(171, 185, 195);
   --complimentary: rgb(105, 125, 150);
   --light: rgb(234, 234, 234);
   --dark: rgb(39, 47, 50);
@@ -28,9 +28,25 @@ header {
   border-radius: 0.4rem;
 }
 
-header h1 {
-  color: var(--primary);
+button {
+  background-color: var(--tertiary);
+  box-shadow: var(--dropShadow);
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+  border-radius: 1.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
+
+.logo h1 {
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--dark);
+  justify-self: center;
+}
+
 nav a {
   color: var(--primary);
 }
@@ -40,7 +56,7 @@ nav a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 20rem;
+  max-width: 20rem;
   height: 20rem;
   border-radius: 5.9rem;
   padding: 2.4rem;
@@ -61,16 +77,12 @@ nav a {
 
 .cardBox button {
   width: 7rem;
-  background-color: var(--secondary);
+
   border: none;
 }
 
 svg {
   color: var(--complimentary);
-}
-
-.id {
-  color: red;
 }
 
 .signupBox {
@@ -84,6 +96,7 @@ svg {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-self: center;
 }
 
 input {
