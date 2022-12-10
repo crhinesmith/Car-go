@@ -1,10 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-<<<<<<< HEAD
 import "./mainStyles.css";
-=======
->>>>>>> main
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
