@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -9,10 +9,10 @@ const typeDefs = gql`
     email: String
     password: String
     admin: Boolean
-    watching: [Cars]
+    watching: [Car]
   }
 
-  type Cars {
+  type Car {
     _id: ID
     make: String
     model: String
@@ -20,8 +20,6 @@ const typeDefs = gql`
     mileage: Int
     image: String
   }
-
-
 
   type Auth {
     token: ID
@@ -40,19 +38,18 @@ const typeDefs = gql`
     cars: [Car]
     car(_id: ID!): Car
     carMake(make: String!): [Car]
-    carModel(model: String! ): [Car]
-    carYear(year: String! ): [Car]
+    carModel(model: String!): [Car]
+    carYear(year: String!): [Car]
     carsByMileage(minimumMileage: Int!, maximumMileage: Int!): [Car]!
   }
 
   type Mutation {
     addUser(input: AddUserInput!): Auth
-    addCarToWatchlist(products: [ID]!): Car
-    carSold(_id: ID!): Car  
+    addCarToWatchlist(products: [ID]!): User
+    removeCarFromWatchlist(carId: ID!): User
+    carSold(_id: ID!): Car
     login(email: String!, password: String!): Auth
-
   }
 `;
 
 module.exports = typeDefs;
-

@@ -1,0 +1,72 @@
+[
+  {
+    "firstName": "Brian",
+    "lastName": "Smith",
+    "email": "bsmith@gmail.com",
+    "password": "password123",
+    "admin": false
+  },
+  {
+    "firstName": "Caroline",
+    "lastName": "Gentry",
+    "email": "cg@gmail.com",
+    "password": "password1234",
+    "admin": false
+  },
+  {
+    "firstName": "Beto",
+    "lastName": "Rodriguez",
+    "email": "brodriguez@gmail.com",
+    "password": "password12345",
+    "admin": false
+  },
+  {
+    "firstName": "Annie",
+    "lastName": "Nguyen",
+    "email": "nguyennguyen@gmail.com",
+    "password": "password123456",
+    "admin": false
+  },
+  {
+    "firstName": "Bryce",
+    "lastName": "Freeman",
+    "email": "freeman@gmail.com",
+    "password": "password1234567",
+    "admin": false
+  },
+  {
+    "firstName": "Tammy",
+    "lastName": "Gostic",
+    "email": "gostic@gmail.com",
+    "password": "password321",
+    "admin": false
+  },
+  {
+    "firstName": "Bruce",
+    "lastName": "Lee",
+    "email": "blee@gmail.com",
+    "password": "iamdeitup1",
+    "admin": false
+  },
+  {
+    "firstName": "Craig",
+    "lastName": "Jones",
+    "email": "jones4real@gmail.com",
+    "password": "pass4word",
+    "admin": false
+  },
+  {
+    "firstName": "Casper",
+    "lastName": "Grant",
+    "email": "cgrant@gmail.com",
+    "password": "igohard33",
+    "admin": false
+  },
+  {
+    "firstName": "Macy",
+    "lastName": "Gray",
+    "email": "feelinggray@gmail.com",
+    "password": "99password",
+    "admin": false
+  }
+]

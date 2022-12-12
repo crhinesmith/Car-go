@@ -18,6 +18,21 @@ function ProductItem(item) {
 
   const { cart } = state
 
+  const handleAddToFavorites = (id) => {
+
+  let favorites = localStorage.getItem("favorites")
+  if (favorites ==null) {
+    localStorage.setItem("favorites", JSON.stringify(item))
+  }
+  else {
+    favorites = JSON.parse(favorites)
+    favorites = favorites.concat(item)
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+  }
+  }
+  const handleDeleteFromFavorites= (id) => {
+  
+  }
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
     if (itemInCart) {
@@ -44,7 +59,7 @@ function ProductItem(item) {
       <Link to={`/products/${_id}`}>
         <img
           alt={name}
-          src={`/images/${image}`}
+          src={image}
         />
         <p>{name}</p>
       </Link>
@@ -52,6 +67,8 @@ function ProductItem(item) {
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
       </div>
+      <button onClick={()=>handleAddToFavorites(_id)}>Add to favorites</button>
+      <button onClick={()=>handleDeleteFromFavorites(_id)}>Remove from favorites</button>
       <button onClick={addToCart}>Add to cart</button>
     </div>
   );
