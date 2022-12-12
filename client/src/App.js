@@ -1,10 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
+
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
@@ -20,15 +21,15 @@ import OrderHistory from './pages/OrderHistory';
 import WatchList from './pages/WatchList'
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -46,6 +47,7 @@ function App() {
           <StoreProvider>
             <Nav />
             <Routes>
+
               <Route 
                 path="/" 
                 element={<Home />} 
@@ -78,6 +80,7 @@ function App() {
                 path="*" 
                 element={<NoMatch />} 
               />
+
             </Routes>
           </StoreProvider>
         </div>
