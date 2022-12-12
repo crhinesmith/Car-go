@@ -47,7 +47,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(input: AddUserInput!): Auth
-    addCarToWatchlist(products: [ID]!): Car
+    addCarToWatchlist(carId: ID!): User
     carSold(_id: ID!): Car  
     login(email: String!, password: String!): Auth
 
