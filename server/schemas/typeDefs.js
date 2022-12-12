@@ -9,10 +9,10 @@ const typeDefs = gql`
     email: String
     password: String
     admin: Boolean
-    watching: [Cars]
+    watching: [Car]
   }
 
-  type Cars {
+  type Car {
     _id: ID
     make: String
     model: String
