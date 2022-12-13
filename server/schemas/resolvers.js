@@ -11,6 +11,7 @@ const resolvers = {
     },
     user: async (parent, { _id  }) => {
       return User.findOne({ _id }).populate('watching');
+
     },
     order: async (parent, { _id }, context) => {
       if (context.user) {
@@ -48,7 +49,6 @@ const resolvers = {
         }
       });
     },
-
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ car: args.car });
@@ -84,7 +84,6 @@ const resolvers = {
 
       return { session: session.id };
     }
-
   },
   Mutation: {
     addUser: async (parent, {input}) => {
