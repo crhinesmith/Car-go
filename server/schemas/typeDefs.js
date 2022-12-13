@@ -25,6 +25,15 @@ const typeDefs = gql`
     token: ID
     user: User
   }
+  type Order {
+    _id: ID
+    purchaseDate: String
+    car: Car
+  }
+  
+  type Checkout {
+    session: ID
+  }
   input AddUserInput {
     firstName: String!
     lastName: String!
@@ -35,6 +44,8 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(_id: ID!): User
+    order(_id: ID!): Order
+    checkout(car: [ID]!): Checkout
     cars: [Car]
     car(_id: ID!): Car
     carMake(make: String!): [Car]
@@ -45,7 +56,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(input: AddUserInput!): Auth
-    addCarToWatchlist(products: [ID]!): User
+    addCarToWatchlist(carId: ID!): User
     removeCarFromWatchlist(carId: ID!): User
     carSold(_id: ID!): Car
     login(email: String!, password: String!): Auth
