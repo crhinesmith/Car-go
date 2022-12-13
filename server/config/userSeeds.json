@@ -1,70 +1,70 @@
 [
   {
-    "firstname": "Brian",
-    "lastname": "Smith",
+    "firstName": "Brian",
+    "lastName": "Smith",
     "email": "bsmith@gmail.com",
     "password": "password123",
     "admin": false
   },
   {
-    "firstname": "Caroline",
-    "lastname": "Gentry",
+    "firstName": "Caroline",
+    "lastName": "Gentry",
     "email": "cg@gmail.com",
     "password": "password1234",
     "admin": false
   },
   {
-    "firstname": "Beto",
-    "lastname": "Rodriguez",
+    "firstName": "Beto",
+    "lastName": "Rodriguez",
     "email": "brodriguez@gmail.com",
     "password": "password12345",
     "admin": false
   },
   {
-    "firstname": "Annie",
-    "lastname": "Nguyen",
+    "firstName": "Annie",
+    "lastName": "Nguyen",
     "email": "nguyennguyen@gmail.com",
     "password": "password123456",
     "admin": false
   },
   {
-    "firstname": "Bryce",
-    "lastname": "Freeman",
+    "firstName": "Bryce",
+    "lastName": "Freeman",
     "email": "freeman@gmail.com",
     "password": "password1234567",
     "admin": false
   },
   {
-    "firstname": "Tammy",
-    "lastname": "Gostic",
+    "firstName": "Tammy",
+    "lastName": "Gostic",
     "email": "gostic@gmail.com",
     "password": "password321",
     "admin": false
   },
   {
-    "firstname": "Bruce",
-    "lastname": "Lee",
+    "firstName": "Bruce",
+    "lastName": "Lee",
     "email": "blee@gmail.com",
     "password": "iamdeitup1",
     "admin": false
   },
   {
-    "firstname": "Craig",
-    "lastname": "Jones",
+    "firstName": "Craig",
+    "lastName": "Jones",
     "email": "jones4real@gmail.com",
     "password": "pass4word",
     "admin": false
   },
   {
-    "firstname": "Casper",
-    "lastname": "Grant",
+    "firstName": "Casper",
+    "lastName": "Grant",
     "email": "cgrant@gmail.com",
     "password": "igohard33",
     "admin": false
   },
   {
-    "firstname": "Macy",
-    "lastname": "Gray",
+    "firstName": "Macy",
+    "lastName": "Gray",
     "email": "feelinggray@gmail.com",
     "password": "99password",
     "admin": false
