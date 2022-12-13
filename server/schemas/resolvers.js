@@ -87,14 +87,14 @@ const resolvers = {
 
   },
   Mutation: {
-    addUser: async (parent, {input}) => {
+    newUser: async (parent, {input}) => {
       const user = await User.create({input});
       const token = signToken(user);
 
       return { token, user };
 
     },
-    addCar: async (parent, {input}) => {
+    newCar: async (parent, {input}) => {
       return  await Car.create({input});
     },
     addCarToWatchlist: async (parent, { carId }, context) => {

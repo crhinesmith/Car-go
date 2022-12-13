@@ -33,14 +33,14 @@ const typeDefs = gql`
   type Checkout {
     session: ID
   }
-  input AddUserInput {
+  input NewUserInput {
     firstName: String!
     lastName: String!
     email: String!
     password: String!
     admin: Boolean!
   }
-  input AddCarInput {
+  input NewCarInput {
     make: String!
     model: String!
     year: Int!
@@ -61,9 +61,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(input: AddUserInput!): Auth
+    newUser(input: NewUserInput!): Auth
     addCarToWatchlist(carId: ID!): User
-    addCar(input: AddCarInput!): Car
+    newCar(input: NewCarInput!): Car
     carSold(carId: ID!): Car  
     removeCarFromWatchlist(carId: ID!): User
     login(email: String!, password: String!): Auth
