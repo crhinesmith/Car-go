@@ -86,16 +86,19 @@ const resolvers = {
     }
   },
   Mutation: {
-    addUser: async (parent, {input}) => {
+    newUser: async (parent, {input}) => {
       const user = await User.create({input});
       const token = signToken(user);
 
       return { token, user };
 
     },
+    newCar: async (parent, {input}) => {
+      return  await Car.create({input});
+    },
     addCarToWatchlist: async (parent, { carId }, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, {
+        return await User.findByIdAndUpdate(context.user.email, {
           $push: { watching: carId },
         });
       }
@@ -103,7 +106,7 @@ const resolvers = {
     },
     removeCarFromWatchlist: async (parent, { carId }, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, {
+        return await User.findByIdAndUpdate(context.user.email, {
           $pull: { watching: carId },
         });
       }
