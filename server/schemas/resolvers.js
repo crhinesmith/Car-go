@@ -1,7 +1,7 @@
-const { AuthenticationError } = require("apollo-server-express");
-const { User, Car } = require("../models");
-const { signToken } = require("../utils/auth");
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+const { AuthenticationError } = require('apollo-server-express');
+const { User, Product, Category, Order, Car } = require('../models');
+const { signToken } = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 
 const resolvers = {
@@ -24,6 +24,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+
     cars: async () => {
       return await Car.find();
     },
@@ -47,6 +48,7 @@ const resolvers = {
         }
       });
     },
+
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ car: args.car });
@@ -82,6 +84,7 @@ const resolvers = {
 
       return { session: session.id };
     }
+
   },
   Mutation: {
     addUser: async (parent, {input}) => {
@@ -89,6 +92,7 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+
     },
     addCarToWatchlist: async (parent, { carId }, context) => {
       if (context.user) {
