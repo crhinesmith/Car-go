@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Category, Order, Car } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
-=======
-const { AuthenticationError } = require("apollo-server-express");
-const { User, Car } = require("../models");
-const { signToken } = require("../utils/auth");
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
->>>>>>> e6e6ae33a355f127fa1dd8b604f215b70a5b8fd7
 
 
 const resolvers = {
@@ -19,8 +12,7 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId }).populate('watching');
     },
-<<<<<<< HEAD
-=======
+
     cars: async () => {
       return await Car.find();
     },
@@ -36,7 +28,7 @@ const resolvers = {
     carYear: async (parent, { carYear }) => {
       return await Car.find({ year: carYear });
     },
->>>>>>> e6e6ae33a355f127fa1dd8b604f215b70a5b8fd7
+
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -44,16 +36,7 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-<<<<<<< HEAD
-  },
-    addCarToWatchlist: async (parent, {carId}, context) => {
-      if (context.user) {
-      return await User.findByIdAndUpdate(context.user._id, { $push: { watching: carId } });
-    }
-   throw new AuthenticationError('Not logged in');
-  }
-}};
-=======
+
     },
     addCarToWatchlist: async (parent, { carId }, context) => {
       if (context.user) {
@@ -94,4 +77,3 @@ const resolvers = {
 module.exports = resolvers;
 
 
->>>>>>> e6e6ae33a355f127fa1dd8b604f215b70a5b8fd7
