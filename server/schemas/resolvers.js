@@ -94,6 +94,9 @@ const resolvers = {
       return { token, user };
 
     },
+    addCar: async (parent, {input}) => {
+      return  await Car.create({input});
+    },
     addCarToWatchlist: async (parent, { carId }, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user.email, {
