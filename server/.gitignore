@@ -5,3 +5,4 @@ package-lock.json
 /.env
 /node_modulesX
 /build
+/.DS_Store

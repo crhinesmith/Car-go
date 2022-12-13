@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const carSchema = require('./Car');
+const Order = require('./Order');
 
 var validateEmail = function (email) {
   var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -44,6 +45,7 @@ const userSchema = new Schema({
       ref: 'Car',
     }
   ],
+  orders: [Order.schema]
 },
   {
     toJSON: {
