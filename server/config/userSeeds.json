@@ -4,69 +4,69 @@
     "lastname": "Smith",
     "email": "bsmith@gmail.com",
     "password": "password123",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Caroline",
     "lastname": "Gentry",
     "email": "cg@gmail.com",
     "password": "password1234",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Beto",
     "lastname": "Rodriguez",
     "email": "brodriguez@gmail.com",
     "password": "password12345",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Annie",
     "lastname": "Nguyen",
     "email": "nguyennguyen@gmail.com",
     "password": "password123456",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Bryce",
     "lastname": "Freeman",
     "email": "freeman@gmail.com",
     "password": "password1234567",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Tammy",
     "lastname": "Gostic",
     "email": "gostic@gmail.com",
     "password": "password321",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Bruce",
     "lastname": "Lee",
     "email": "blee@gmail.com",
     "password": "iamdeitup1",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Craig",
     "lastname": "Jones",
     "email": "jones4real@gmail.com",
     "password": "pass4word",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Casper",
     "lastname": "Grant",
     "email": "cgrant@gmail.com",
     "password": "igohard33",
-    "admin": "False"
+    "admin": false
   },
   {
     "firstname": "Macy",
     "lastname": "Gray",
     "email": "feelinggray@gmail.com",
     "password": "99password",
-    "admin": "False"
+    "admin": false
   }
 ]
