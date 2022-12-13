@@ -96,7 +96,7 @@ const resolvers = {
     },
     addCarToWatchlist: async (parent, { carId }, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, {
+        return await User.findByIdAndUpdate(context.user.email, {
           $push: { watching: carId },
         });
       }
@@ -104,7 +104,7 @@ const resolvers = {
     },
     removeCarFromWatchlist: async (parent, { carId }, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, {
+        return await User.findByIdAndUpdate(context.user.email, {
           $pull: { watching: carId },
         });
       }
