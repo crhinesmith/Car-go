@@ -5,19 +5,20 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import "./mainStyles.css";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Nav from "./components/Nav";
-import { StoreProvider } from "./utils/GlobalState";
-import Success from "./pages/Success";
-import OrderHistory from "./pages/OrderHistory";
-import styled from "@emotion/styled";
+
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+import Home from './pages/Home';
+import Detail from './pages/Detail';
+import NoMatch from './pages/NoMatch';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Nav from './components/Nav';
+import { StoreProvider } from './utils/GlobalState';
+import Success from './pages/Success';
+import OrderHistory from './pages/OrderHistory';
+import WatchList from './pages/WatchList'
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -46,13 +47,40 @@ function App() {
           <StoreProvider>
             <Nav />
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/success" element={<Success />} />
-              <Route path="/orderHistory" element={<OrderHistory />} />
-              <Route path="/products/:id" element={<Detail />} />
-              <Route path="*" element={<NoMatch />} />
+
+              <Route 
+                path="/" 
+                element={<Home />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/signup" 
+                element={<Signup />} 
+              />
+              <Route 
+                path="/success" 
+                element={<Success />} 
+              />
+              <Route 
+                path="/orderHistory" 
+                element={<OrderHistory />} 
+              />
+              <Route 
+                path="/products/:id" 
+                element={<Detail />} 
+              />
+              <Route 
+                path="/watch-list"
+                element={<WatchList />}
+                />
+              <Route 
+                path="*" 
+                element={<NoMatch />} 
+              />
+
             </Routes>
           </StoreProvider>
         </div>
