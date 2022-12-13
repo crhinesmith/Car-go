@@ -45,14 +45,9 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(input: AddUserInput!): Auth
-<<<<<<< HEAD
     addCarToWatchlist(carId: ID!): User
     carSold(_id: ID!): Car  
-=======
-    addCarToWatchlist(products: [ID]!): User
     removeCarFromWatchlist(carId: ID!): User
-    carSold(_id: ID!): Car
->>>>>>> e6e6ae33a355f127fa1dd8b604f215b70a5b8fd7
     login(email: String!, password: String!): Auth
   }
 `;
