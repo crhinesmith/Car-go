@@ -37,7 +37,7 @@ const Card = (props) => {
             <p className="yearLabel">Year: {car.year}</p>
             <p className="mileageLabel">Mileage: {car.mileage}</p>
 
-            <form onSubmit={handleBuyCar}>
+            <form onSubmit={handleBuyCar} className="my-2">
               <button className="cardButton" type="submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const Card = (props) => {
                 Buy
               </button>
             </form>
-            <form onSubmit={handleWatchCar}>
+            <form onSubmit={handleWatchCar} className="my-2">
               <button className="cardButton" type="submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

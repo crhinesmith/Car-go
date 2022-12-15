@@ -15,7 +15,11 @@ export function Search() {
 
   return (
     <div className="search d-flex justify-content-center mb-4">
-      <form className="d-flex" onSubmit={handleSearch}>
+      <form
+        id="searchForm"
+        className="searchForm d-flex"
+        onSubmit={handleSearch}
+      >
         <input
           className="searchBar"
           id="searchInput"
