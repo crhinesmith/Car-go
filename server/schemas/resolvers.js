@@ -11,6 +11,7 @@ const resolvers = {
     },
     user: async (parent, { _id  }) => {
       return User.findOne({ _id }).populate('watching');
+
     },
     order: async (parent, { _id }, context) => {
       if (context.user) {
@@ -48,7 +49,6 @@ const resolvers = {
         }
       });
     },
-
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ car: args.car });
@@ -84,17 +84,21 @@ const resolvers = {
 
       return { session: session.id };
     }
-
   },
   Mutation: {
-    addUser: async (parent, {input}) => {
+    newUser: async (parent, {input}) => {
       const user = await User.create({input});
+      
       const token = signToken(user);
 
       return { token, user };
 
     },
+    newCar: async (parent, {input}) => {
+      return  await Car.create(input);
+    },
     addCarToWatchlist: async (parent, { carId }, context) => {
+
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, {
           $push: { watching: carId },
@@ -103,6 +107,8 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     removeCarFromWatchlist: async (parent, { carId }, context) => {
+      console.log("carId", carId)
+      console.log("user context", context.user)
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, {
           $pull: { watching: carId },
@@ -128,7 +134,8 @@ const resolvers = {
       return { token, user };
     },
     carSold: async (parent, { carId }) => {
-      return await Car.findByIdAndDelete({ carId });
+      console.log(carId)
+      return await Car.findByIdAndDelete(carId );
     },
   },
 };
