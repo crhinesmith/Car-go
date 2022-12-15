@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+
 
 const Card = (props) => {
   // console.log("1. props from home: ", props);
@@ -7,15 +7,16 @@ const Card = (props) => {
   const cars = props.cars;
 
   return (
-    <div className="container d-flex justify-content-center flex-column">
-      {/* loop the array and print cards info */}
-
-      {/* loop cars array data to show cards */}
+    <div className="container d-flex  flex-column">
+      <div class="row">
+        {/* loop cars array data to show cards */}
       {cars.map((car) => (
         <div className="cardBox" key={car._id}>
-          <div className="cardImg"></div>
+          <img className="cardImg" alt="pic of car" src={`${car.image}`} ></img>
           <p className="makeLabel">Make: {car.make} </p>
           <p className="modelLabel">Model: {car.model}</p>
+          <p className="yearLabel">Year: {car.year}</p>
+          <p className="mileageLabel">Mileage: {car.mileage}</p>
           <button className="cardButton">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +49,8 @@ const Card = (props) => {
           </button>
         </div>
       ))}
+      </div>
+      
     </div>
   );
 };
