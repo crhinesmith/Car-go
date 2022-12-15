@@ -1,25 +1,28 @@
 import React from "react";
 
 export function Search() {
-  function handleCarSearch() {
+  function handleSearch() {
     try {
       // Do something that could throw
       console.log("search clicked");
+      // get the values from the form
+      // query those values of car
+      // render those values on the screen
     } catch (error) {
       this.setState({ error });
     }
   }
 
   return (
-    <div className="search">
-      <form className="d-flex p-2">
+    <div className="search d-flex justify-content-center mb-4">
+      <form className="d-flex" onSubmit={handleSearch}>
         <input
           className="searchBar"
           id="searchInput"
-          placeholder="Enter name"
+          placeholder="Search Cars"
         />
-        <button className="searchButton" onClick={handleCarSearch}>
-          Log value
+        <button className="searchButton" type="submit">
+          Search
         </button>
       </form>
     </div>
