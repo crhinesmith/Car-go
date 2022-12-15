@@ -87,26 +87,31 @@ const resolvers = {
   },
   Mutation: {
     newUser: async (parent, {input}) => {
+
       const user = await User.create(input);
+
       const token = signToken(user);
 
       return { token, user };
 
     },
     newCar: async (parent, {input}) => {
-      return  await Car.create({input});
+      return  await Car.create(input);
     },
     addCarToWatchlist: async (parent, { carId }, context) => {
+
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user.email, {
+        return await User.findByIdAndUpdate(context.user._id, {
           $push: { watching: carId },
         });
       }
       throw new AuthenticationError("Not logged in");
     },
     removeCarFromWatchlist: async (parent, { carId }, context) => {
+      console.log("carId", carId)
+      console.log("user context", context.user)
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user.email, {
+        return await User.findByIdAndUpdate(context.user._id, {
           $pull: { watching: carId },
         });
       }
@@ -130,7 +135,8 @@ const resolvers = {
       return { token, user };
     },
     carSold: async (parent, { carId }) => {
-      return await Car.findByIdAndDelete({ carId });
+      console.log(carId)
+      return await Car.findByIdAndDelete(carId );
     },
   },
 };
