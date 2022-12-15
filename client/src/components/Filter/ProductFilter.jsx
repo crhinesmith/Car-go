@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {Button, Row, Col, InputNumber, Slider, Typography, Select} from 'antd';
+import React, {useState} from 'react'
+import {Button, Row, Col, InputNumber, Slider, Typography} from 'antd';
 import {ClosedCircleOutlined, SearchOutlined} from '@ant-design/icons'
 
 const {Text} = Typography;
