@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -15,7 +15,7 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
-import { StoreProvider } from './utils/GlobalState';
+import { CarProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import WatchList from './pages/WatchList'
@@ -44,7 +44,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <StoreProvider>
+          <CarProvider>
             <Nav />
             <Routes>
 
@@ -82,7 +82,7 @@ function App() {
               />
 
             </Routes>
-          </StoreProvider>
+          </CarProvider>
         </div>
       </Router>
     </ApolloProvider>
