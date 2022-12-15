@@ -81,3 +81,19 @@ export const QUERY_CARS = gql`
     }
   }
 `;
+
+export const QUERY_USERS = gql`
+  {
+    query
+    Query {
+      users {
+        _id
+        admin
+        email
+        firstName
+        lastName
+        password
+      }
+    }
+  }
+`;

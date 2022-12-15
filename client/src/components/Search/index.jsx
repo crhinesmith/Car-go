@@ -1,7 +1,7 @@
 import React from "react";
 
 export function Search() {
-  function handleClick() {
+  function handleCarSearch() {
     try {
       // Do something that could throw
       console.log("search clicked");
@@ -12,8 +12,16 @@ export function Search() {
 
   return (
     <div className="search">
-      {/* <input placeholder="Enter name" />
-      <button>Log value</button> */}
+      <form className="d-flex p-2">
+        <input
+          className="searchBar"
+          id="searchInput"
+          placeholder="Enter name"
+        />
+        <button className="searchButton" onClick={handleCarSearch}>
+          Log value
+        </button>
+      </form>
     </div>
   );
 }
