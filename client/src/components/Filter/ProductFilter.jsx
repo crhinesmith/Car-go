@@ -64,7 +64,7 @@ function CarFilters(props) {
                     <Input placeholder="Enter Make" value={make} onChange={handleMakeChange} />
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={6} xl={3} xxl={3}>
-                    <Input placeholder="Enter Make" value={year} onChange={handleYearChange} />
+                    <Input placeholder="Enter Year" value={year} onChange={handleYearChange} />
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={6} xl={6} xxl={6}>
                     <Row gutter={4} align ="middle">

@@ -35,6 +35,7 @@ mutation NewUser($input: NewUserInput!) {
       email
       firstName
       lastName
+      admin
     }
   }
 }

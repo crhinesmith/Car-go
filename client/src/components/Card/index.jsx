@@ -1,14 +1,27 @@
 import React from "react";
 import { Search } from "../Search";
+import { CAR_SOLD } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 const Card = (props) => {
   // handle the cars data from home page
   const cars = props.cars;
-
+  const [carSold, { error }] = useMutation(CAR_SOLD);
   // add buy logic
-  function handleBuyCar(user, car) {
+  async function handleBuyCar(carId) {
+    try {
+      const { data } = await carSold({
+        variables: { carId: carId },
+      });
+      window.location.replace("/success")
+    } catch (err) {
+      if(err ) {
+        window.location.replace("/fail")
+      }
+    }
+
     // get user and car to say thank you User and show car
-    console.log("buy car");
+
     // add incoming car to success page props
     // return the success page
   }
@@ -37,7 +50,7 @@ const Card = (props) => {
             <p className="yearLabel">Year: {car.year}</p>
             <p className="mileageLabel">Mileage: {car.mileage}</p>
 
-            <form onSubmit={handleBuyCar} className="my-2">
+            <form onSubmit={() => handleBuyCar(car._id)} className="my-2">
               <button className="cardButton" type="submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
