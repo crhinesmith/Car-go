@@ -1,43 +1,19 @@
-// import React, { useEffect } from "react";
-// import { useMutation } from "@apollo/client";
-// import Jumbotron from "../components/Jumbotron";
-// import { ADD_ORDER } from "../utils/mutations";
-// import { idbPromise } from "../utils/helpers";
+import React from "react";
 
-// function Success() {
-  // const [addOrder] = useMutation(ADD_ORDER);
+import Jumbotron from "../components/Jumbotron";
 
-  // useEffect(() => {
-  //   async function saveOrder() {
-  //     const cart = await idbPromise("cart", "get");
-  //     const products = cart.map((item) => item._id);
 
-  //     // if (products.length) {
-  //     //   // const { data } = await addOrder({ variables: { products } });
-  //     //   // const productData = data.addOrder.products;
+function Success() {
 
-  //     //   productData.forEach((item) => {
-  //     //     idbPromise("cart", "delete", item);
-  //     //   });
-  //     // }
-  //     // redirect to home after 3 seconds
-  //     setTimeout(() => {
-  //       window.location.assign("/");
-  //     }, 3000);
-  //   }
+  return (
+    <div>
+      <Jumbotron>
+        <h1>Purchase success!</h1>
+        <h2>Thank you for your purchase with Car-Go!</h2>
+        <h2>You will now be redirected to the home page</h2>
+      </Jumbotron>
+    </div>
+  );
+}
 
-  //   saveOrder();
-  // }, [addOrder]);
-
-//   return (
-//     <div>
-//       <Jumbotron>
-//         <h1>Purchase success!</h1>
-//         <h2>Thank you for your purchase with Car-Go!</h2>
-//         <h2>You will now be redirected to the home page</h2>
-//       </Jumbotron>
-//     </div>
-//   );
-// }
-
-// export default Success;
+export default Success;
