@@ -1,46 +1,106 @@
 import { gql } from "@apollo/client";
 
 export const LOGIN = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      user {
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    user {
+      _id
+      admin
+      email
+      firstName
+      lastName
+      password
+      watching {
         _id
+        image
+        make
+        mileage
+        model
+        year
       }
     }
   }
+}
 `;
 
 export const NEW_USER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
-      purchaseDate
-      products {
-        _id
-        name
-        description
-        price
-        quantity
-        category {
-          name
-        }
-      }
+mutation NewUser($input: NewUserInput!) {
+  newUser(input: $input) {
+    token
+    user {
+      email
+      firstName
+      lastName
     }
   }
+}
 `;
 
-export const ADD_USER = gql`
-  mutation Mutation($input: AddUserInput!) {
-    addUser(input: $input) {
-      token
-      user {
-        password
-        lastName
-        firstName
-        email
-        admin
-        _id
-      }
+export const NEW_CAR = gql`
+mutation NewCar($input: NewCarInput!) {
+  newCar(input: $input) {
+    _id
+    image
+    make
+    mileage
+    model
+    year
+  }
+}
+`;
+
+export const ADD_CAR_TO_WATCHLIST = gql`
+mutation AddCarToWatchlist($carId: ID!) {
+  addCarToWatchlist(carId: $carId) {
+    _id
+    admin
+    email
+    firstName
+    lastName
+    password
+    watching {
+      _id
+      image
+      make
+      mileage
+      model
+      year
     }
   }
+}
+`;
+
+export const REMOVE_CAR_FROM_WATCHLIST = gql`
+mutation RemoveCarFromWatchlist($carId: ID!) {
+  removeCarFromWatchlist(carId: $carId) {
+    _id
+    admin
+    email
+    firstName
+    lastName
+    password
+    watching {
+      _id
+      image
+      make
+      mileage
+      model
+      year
+    }
+  }
+}
+`;
+
+export const CAR_SOLD = gql`
+mutation CarSold($carId: ID!) {
+  carSold(carId: $carId) {
+    _id
+    image
+    make
+    mileage
+    model
+    year
+  }
+}
 `;
