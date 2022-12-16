@@ -2,31 +2,43 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
-import { ADD_USER } from "../utils/mutations";
+import { NEW_USER } from "../utils/mutations";
+require("dotenv").config()
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
-  const [addUser] = useMutation(ADD_USER);
+  const [formState, setFormState] = useState({ email: "", password: "", admin: "" });
+  const [newUser] = useMutation(NEW_USER);
+  const [active, isActive]= useState(false) 
 
   const handleFormSubmit = async (event) => {
+    
     event.preventDefault();
-    const mutationResponse = await addUser({
+    const mutationResponse = await newUser({
       variables: {
-        email: formState.email,
-        password: formState.password,
+        input:{
         firstName: formState.firstName,
         lastName: formState.lastName,
+        email: formState.email,
+        password: formState.password,
+        admin: true
+        }
       },
     });
-    const token = mutationResponse.data.addUser.token;
+    const token = mutationResponse.data.newUser.token;
     Auth.login(token);
+    console.log(mutationResponse);
   };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    if(event.target.type==="checkbox") {
+      isActive(!active) 
+      console.log("helloworld", active);
+    }
+    console.log("value", value)
     setFormState({
       ...formState,
-      [name]: value,
+      [name]: value, 
     });
   };
 
@@ -78,6 +90,12 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
+        <div className="form-check">
+  <input className="form-check-input" type="checkbox" name="admin" admin="checked" checked={active} onChange={handleChange}></input>
+  <label className="form-check-label" for="Admin">
+    Admin
+  </label>
+</div>
         <div className="flex-row justify-content-center">
           <button type="submit">Submit</button>
         </div>

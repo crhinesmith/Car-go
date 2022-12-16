@@ -2,46 +2,46 @@ const Admin = () => {
     return (
     <>
 <div class="form-group">
-    <center><h1><u class="thick">Adding a Car to your Account</u></h1></center>
+    <center><h1><u className="thick">Adding a Car to your Account</u></h1></center>
     <br />
     <br />
     <br />
-    <h2 class="heading">Owner Details</h2>
-    <div class="controls">
-      <input type="text" id="name" class="floatLabel" name="name"></input>
+    <h2 className="heading">Owner Details</h2>
+    <div className="controls">
+      <input type="text" id="name" className="floatLabel" name="name"></input>
       <label for="name">Name</label>
     </div>
-    <div class="controls">
-      <input type="text" id="email" class="floatLabel" name="email"></input>
+    <div className="controls">
+      <input type="text" id="email" className="floatLabel" name="email"></input>
       <label for="email">Email</label>
     </div>       
-    <div class="controls">
-      <input type="tel" id="phone" class="floatLabel" name="phone"></input>
+    <div className="controls">
+      <input type="tel" id="phone" className="floatLabel" name="phone"></input>
       <label for="phone">Phone</label>
     </div>
-      <div class="grid">
-        <div class="col-2-3">
-          <div class="controls">
+      <div className="grid">
+        <div className="col-2-3">
+          <div className="controls">
            <input type="text" id="street" class="floatLabel" name="street"></input>
            <label for="street">Street</label>
           </div>          
         </div>
-        <div class="col-1-3">
-          <div class="controls">
+        <div className="col-1-3">
+          <div className="controls">
             <input type="number" id="street-number" class="floatLabel" name="street-number"></input>
             <label for="street-number">House No.</label>
           </div>         
         </div>
       </div>
-      <div class="grid">
-        <div class="col-2-3">
-          <div class="controls">
+      <div className="grid">
+        <div className="col-2-3">
+          <div className="controls">
             <input type="text" id="city" class="floatLabel" name="city"></input>
             <label for="city">City</label>
           </div>         
         </div>
-        <div class="col-1-3">
-          <div class="controls">
+        <div className="col-1-3">
+          <div className="controls">
             <input type="text" id="post-code" class="floatLabel" name="post-code"></input>
             <label for="post-code">Post Code</label>
           </div>         
@@ -68,23 +68,23 @@ const Admin = () => {
     <div class="grid"> 
        <div class="col-1-3">
    <div class="controls">
-        <input type="text" id="carmodel" class="floatLabel" name="carmodel"/>
+        <input type="text" id="carmodel" class="floatLabel" name="carmodel"></input>
         <label for="carmodel">Car Model</label>
    </div>
 </div>       
        
        <div class="col-1-3">
    <div class="controls">
-        <input type="number" id="something" class="floatLabel" name="something"/>
+        <input type="number" id="something" class="floatLabel" name="something"></input>
         <label for="something">Something</label>
    </div>
 </div>
     </div>
     
-    {/* <div class="grid">
+    <div class="grid">
     <div class="col-1-4 col-1-4-sm">
       <div class="controls">
-        <input type="date" id="regyear" class="floatLabel" name="regyear" value=""/>
+        <input type="date" id="regyear" class="floatLabel" name="regyear" value=""></input>
         <label for="regyear" class="label-date"><i class="fa fa-calendar"></i>  Reg. Year</label>
       </div>      
     </div>
@@ -94,7 +94,7 @@ const Admin = () => {
         <label for="modelyear" class="label-date"><i class="fa fa-calendar"></i>  Model Year</label>
       </div>      
     </div> 
-    </div> */}
+    </div>
      
      </div>
 

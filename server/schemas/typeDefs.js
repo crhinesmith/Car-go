@@ -55,7 +55,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(input: AddUserInput!): Auth
+    newUser(input: AddUserInput!): Auth
     addCarToWatchlist(carId: ID!): User
     carSold(_id: ID!): Car  
     removeCarFromWatchlist(carId: ID!): User
