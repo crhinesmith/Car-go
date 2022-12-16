@@ -12,6 +12,7 @@ function Success() {
       const cart = await idbPromise("cart", "get");
       const products = cart.map((item) => item._id);
 
+
       if (products.length) {
         const { data } = await newOrder({ variables: { products } });
         const productData = data.addOrder.products;
@@ -20,14 +21,16 @@ function Success() {
           idbPromise("cart", "delete", item);
         });
       }
-      // redirect to home after 3 seconds
+      redirect to home after 3 seconds
       setTimeout(() => {
         window.location.assign("/");
       }, 3000);
     }
 
+
     saveOrder();
-  }, [newOrder]);
+  }, [addOrder]);
+
 
   return (
     <div>

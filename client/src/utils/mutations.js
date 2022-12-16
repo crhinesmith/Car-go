@@ -17,6 +17,7 @@ export const LOGIN = gql`
 }
 `;
 
+
 export const NEW_USER = gql`
 mutation NewUser($input: NewUserInput!) {
   newUser(input: $input) {
