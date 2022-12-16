@@ -1,20 +1,19 @@
-
-import React, {useState} from "react";
-import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
+import React, { useState } from "react";
 import Cart from "../components/Cart";
-import WatchList from "../pages/WatchList.js"
-import Card from "../components/Card"
-
+import WatchList from "../pages/WatchList.js";
+import Card from "../components/Card";
+import { useQuery } from "@apollo/client";
+import { QUERY_CARS } from "../utils/queries";
 
 const Home = () => {
-  // TODO: implement car cards to a state vairable
-  const [carCard, setCarCard] = useState([]);
+  const { loading, data } = useQuery(QUERY_CARS);
+  // check and set the car data to variable
 
-  
+  const carData = data?.cars;
+
   return (
     <section className="container d-flex justify-content-center flex-column my-2 py-3">
-      <Card />
+      {loading ? <p>loading</p> : <Card cars={carData} />}
     </section>
   );
 };
