@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { NEW_USER } from "../utils/mutations";
+
 require("dotenv").config()
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: "", password: "", admin: "" });
   const [newUser] = useMutation(NEW_USER);
   const [active, isActive]= useState(false) 
+
 
   const handleFormSubmit = async (event) => {
     
