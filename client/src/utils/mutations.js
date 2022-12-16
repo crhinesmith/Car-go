@@ -6,16 +6,23 @@ export const LOGIN = gql`
     login(email: $email, password: $password) {
       token
       user {
-
         _id
-        image
-        make
-        mileage
-        model
-        year
+        admin
+        email
+        firstName
+        lastName
+        password
+        watching {
+          _id
+          image
+          make
+          mileage
+          model
+          year
+        }
       }
     }
-  }
+  
 }
 `;
 

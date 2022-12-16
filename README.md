@@ -9,6 +9,7 @@ For the consumer on-the-go, we present: **Car-GO**
 ## Table of Contents
 
 - [Installation](#installation)
+- [Usage](#usage)
 - [Technologies](#technologies)
 
 
@@ -46,6 +47,7 @@ and once in the root folder, you will run the last command that will launch the 
 npm run develop
 ```
 
+## **Usage**
 ## **Screenshots of UI**
 
 This is what you will see when your application deploys. <br>
