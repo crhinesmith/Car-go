@@ -17,6 +17,7 @@ import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import { CarProvider } from './utils/GlobalState';
 import Success from './pages/Success';
+import Admin from './pages/Admin';
 import OrderHistory from './pages/OrderHistory';
 import WatchList from './pages/WatchList'
 
@@ -55,6 +56,10 @@ function App() {
               <Route 
                 path="/login" 
                 element={<Login />} 
+              />
+              <Route
+                path="/Admin"
+                element={<Admin />}
               />
               <Route 
                 path="/signup" 
