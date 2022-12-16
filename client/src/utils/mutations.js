@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!, $admin: Boolean!) {
@@ -6,40 +6,95 @@ export const LOGIN = gql`
       token
       user {
         _id
+        image
+        make
+        mileage
+        model
+        year
       }
     }
   }
-`;
-
-export const NEW_ORDER = gql`
-  mutation newOrder($products: [ID]!) {
-    newOrder(products: $products) {
-      purchaseDate
-      products {
-        _id
-        name
-        description
-        price
-        quantity
-        category {
-          name
-        }
-      }
-    }
-  }
+}
 `;
 
 export const NEW_USER = gql`
-  mutation newUser(
-    $input: AddUserInput!
-  ) {
-    newUser(
-      input: $input
-    ) {
-      token
-      user {
-        _id
-      }
+mutation NewUser($input: NewUserInput!) {
+  newUser(input: $input) {
+    token
+    user {
+      email
+      firstName
+      lastName
     }
   }
+}
+`;
+
+
+export const NEW_CAR = gql`
+mutation NewCar($input: NewCarInput!) {
+  newCar(input: $input) {
+    _id
+    image
+    make
+    mileage
+    model
+    year
+  }
+}
+`;
+
+export const ADD_CAR_TO_WATCHLIST = gql`
+mutation AddCarToWatchlist($carId: ID!) {
+  addCarToWatchlist(carId: $carId) {
+    _id
+    admin
+    email
+    firstName
+    lastName
+    password
+    watching {
+      _id
+      image
+      make
+      mileage
+      model
+      year
+    }
+  }
+}
+`;
+
+export const REMOVE_CAR_FROM_WATCHLIST = gql`
+mutation RemoveCarFromWatchlist($carId: ID!) {
+  removeCarFromWatchlist(carId: $carId) {
+    _id
+    admin
+    email
+    firstName
+    lastName
+    password
+    watching {
+      _id
+      image
+      make
+      mileage
+      model
+      year
+    }
+  }
+}
+`;
+
+export const CAR_SOLD = gql`
+mutation CarSold($carId: ID!) {
+  carSold(carId: $carId) {
+    _id
+    image
+    make
+    mileage
+    model
+    year
+  }
+}
 `;
