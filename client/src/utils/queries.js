@@ -17,20 +17,8 @@ export const QUERY_ALL_USERS = gql`
 `;
 
 export const QUERY_USER = gql`
-query User($id: ID!) {
-  user(_id: $id) {
-    _id
-    admin
-    firstName
-    email
-    lastName
-    password
-    watching {
-      image
-      make
-      mileage
-      model
-      year
+  query User($id: ID!) {
+    user(_id: $id) {
       _id
       admin
       firstName
@@ -38,7 +26,17 @@ query User($id: ID!) {
       lastName
       password
       watching {
+        image
+        make
+        mileage
+        model
+        year
         _id
+        admin
+        firstName
+        email
+        lastName
+        password
       }
     }
   }
