@@ -44,23 +44,9 @@ export function Search({ props }) {
     });
   }
   return (
-    <div className="search d-flex justify-content-center mb-4">
-      <form
-        id="searchForm"
-        className="searchForm d-flex"
-        onSubmit={handleSearch}
-      >
-        <input
-          className="searchBar"
-          id="searchInput"
-          name="searchInput"
-          placeholder="Search Cars"
-          onChange={handleTextChange}
-        />
-        <button className="searchButton" type="submit">
-          Search
-        </button>
-      </form>
+    <div className="search">
+      {/* <input placeholder="Enter name" />
+      <button>Log value</button> */}
     </div>
   );
 }

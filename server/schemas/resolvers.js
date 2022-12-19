@@ -9,7 +9,7 @@ const resolvers = {
     users: async () => {
       return User.find();
     },
-    user: async (parent, { _id  }) => {
+    user: async (parent, { _id }) => {
       return User.findOne({ _id }).populate('watching');
 
     },
@@ -42,7 +42,7 @@ const resolvers = {
       return await Car.find({ year });
     },
     carsByMileage: async (parent, { minimumMileage, maximumMileage }) => {
-      return await Car.find({ 
+      return await Car.find({
         mileage: {
           $gt: minimumMileage,
           $lt: maximumMileage
@@ -56,23 +56,23 @@ const resolvers = {
 
       const { singleCar } = await order.populate('car');
 
-        const car = await stripe.products.create({
-          name: "Car",
-          description: `${singleCar.make} ${singleCar.model}`,
-          
-        });
+      const car = await stripe.products.create({
+        name: "Car",
+        description: `${singleCar.make} ${singleCar.model}`,
 
-        const price = await stripe.prices.create({
-          product: car.id,
-          unit_amount: singleCar.price,
-          currency: 'usd',
-        });
+      });
 
-        line_items.push({
-          price: price.id,
-          quantity: 1
-        });
-      
+      const price = await stripe.prices.create({
+        product: car.id,
+        unit_amount: singleCar.price,
+        currency: 'usd',
+      });
+
+      line_items.push({
+        price: price.id,
+        quantity: 1
+      });
+
 
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
@@ -86,7 +86,8 @@ const resolvers = {
     }
   },
   Mutation: {
-    newUser: async (parent, {input}) => {
+    newUser: async (parent, { input }) => {
+
 
       const user = await User.create(input);
 
@@ -95,8 +96,11 @@ const resolvers = {
       return { token, user };
 
     },
-    newCar: async (parent, {input}) => {
-      return  await Car.create(input);
+    newCar: async (parent, { input }, context) => {
+      if (context.user.admin){
+        return await Car.create(input);
+      }
+      throw new AuthenticationError("Not logged in");
     },
     addCarToWatchlist: async (parent, { carId }, context) => {
 
@@ -134,9 +138,13 @@ const resolvers = {
 
       return { token, user };
     },
-    carSold: async (parent, { carId }) => {
-      console.log(carId)
-      return await Car.findByIdAndDelete(carId );
+    carSold: async (parent, { carId }, context) => {
+      console.log("context", context.user)
+      if (context.user) {
+        console.log(carId)
+        return await Car.findByIdAndDelete(carId);
+      }
+      throw new AuthenticationError("Not logged in");
     },
   },
 };
@@ -144,4 +152,3 @@ const resolvers = {
 module.exports = resolvers;
 
 
- 
