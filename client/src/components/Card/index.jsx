@@ -1,12 +1,13 @@
 import React from "react";
 import { Search } from "../Search";
-import { CAR_SOLD } from "../../utils/mutations";
+import { CAR_SOLD, ADD_CAR_TO_WATCHLIST } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 
 const Card = (props) => {
   // handle the cars data from home page
   const cars = props.cars;
   const [carSold, { error }] = useMutation(CAR_SOLD);
+  const [addCarToWatchlist, {error2}] = useMutation(ADD_CAR_TO_WATCHLIST)
   // add buy logic
   async function handleBuyCar(carId) {
     try {
@@ -27,10 +28,17 @@ const Card = (props) => {
   }
 
   // add wactch logic
-  function handleWatchCar(user, car) {
-    console.log("watch car");
-    // find the user
-    // add the car to the users watchlist
+  async function handleWatchCar(carId) {
+    try {
+      const { data } = await addCarToWatchlist({
+        variables: { carId: carId },
+      });
+      window.location.replace("/watch-list")
+    } catch (err) {
+      if(err ) {
+        window.location.replace("/fail")
+      }
+    }
   }
 
   return (
@@ -68,7 +76,7 @@ const Card = (props) => {
                 Buy
               </button>
             </form>
-            <form onSubmit={handleWatchCar} className="my-2">
+            <form onSubmit={() => handleWatchCar(car._id)} className="my-2">
               <button className="cardButton" type="submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

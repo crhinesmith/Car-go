@@ -63,23 +63,9 @@ export const NEW_CAR = gql`
 `;
 
 export const ADD_CAR_TO_WATCHLIST = gql`
-  mutation AddCarToWatchlist($carId: ID!) {
-    addCarToWatchlist(carId: $carId) {
-      _id
-      admin
-      email
-      firstName
-      lastName
-      password
-      watching {
-        _id
-        image
-        make
-        mileage
-        model
-        year
-      }
-    }
+mutation AddCarToWatchlist($carId: ID!) {
+  addCarToWatchlist(carId: $carId) {
+    _id
   }
 `;
 
