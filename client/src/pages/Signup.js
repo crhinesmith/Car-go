@@ -94,7 +94,7 @@ function Signup(props) {
         </div>
         <div className="form-check">
   <input className="form-check-input" type="checkbox" name="admin" admin="checked" checked={active} onChange={handleChange}></input>
-  <label className="form-check-label" for="Admin">
+  <label className="form-check-label" htmlFor="Admin">
     Admin
   </label>
 </div>

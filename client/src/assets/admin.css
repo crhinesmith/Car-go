@@ -1,0 +1,11 @@
+.form-group {
+    text-align: center;
+    width: 300px;
+    height: 450px;
+    margin: auto;
+    position: relative;
+}
+
+button.col-1-4 {
+    width: 20%;
+}

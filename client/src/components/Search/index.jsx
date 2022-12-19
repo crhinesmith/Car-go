@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { QUERY_CARS } from "../../utils/queries";
-import Home from "../../pages/Home";
-import Card from "../Card";
+import "../../pages/Home";
+import "../Card";
 
 export function Search({ props }) {
   const [formState, updateForm] = useState({ searchInput: "" });
