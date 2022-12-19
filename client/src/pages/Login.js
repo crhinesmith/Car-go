@@ -10,6 +10,7 @@ function Login(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+
     try {
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
