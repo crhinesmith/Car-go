@@ -26,6 +26,11 @@ query User($id: ID!) {
     lastName
     password
     watching {
+      image
+      make
+      mileage
+      model
+      year
       _id
     }
   }

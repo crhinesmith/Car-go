@@ -76,7 +76,7 @@ const Card = (props) => {
                 Buy
               </button>
             </form>
-            <form onSubmit={handleWatchCar} className="my-2">
+            <form onSubmit={() => handleWatchCar(car._id)} className="my-2">
               <button className="cardButton" type="submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
