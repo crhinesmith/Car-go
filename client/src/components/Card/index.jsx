@@ -2,19 +2,20 @@ import React from "react";
 import { Search } from "../Search";
 
 const Card = (props) => {
+  const cars = props?.cars;
   // handle the cars data from home page
-  const cars = props.cars;
-
+  console.log("incoming propos ", props);
   // add buy logic
-  function handleBuyCar(user, car) {
+  function handleBuyCar(event) {
+    event.preventDefault();
     // get user and car to say thank you User and show car
-    console.log("buy car");
     // add incoming car to success page props
     // return the success page
   }
 
   // add wactch logic
-  function handleWatchCar(user, car) {
+  function handleWatchCar(event) {
+    event.preventDefault();
     console.log("watch car");
     // find the user
     // add the car to the users watchlist
@@ -22,7 +23,6 @@ const Card = (props) => {
 
   return (
     <div className="container d-flex flex-column justify-content-center">
-      <Search />
       <div className="row justify-content-center">
         {/* loop cars array data to show cards */}
         {cars.map((car) => (
@@ -30,7 +30,7 @@ const Card = (props) => {
             <img
               className="cardImg"
               alt="pic of car"
-              src={`${car.image}`}
+              src={`${car?.image}`}
             ></img>
             <p className="makeLabel">Make: {car.make} </p>
             <p className="modelLabel">Model: {car.model}</p>
