@@ -16,73 +16,57 @@ const Home = () => {
 
   const handleSearch = async (event) => {
     event.preventDefault();
+    const { name, value } = event.target;
 
     try {
+      updateForm({
+        ...formState,
+        [name]: value,
+      });
       // get the values from the form
       const searchState = formState.searchInput.trim().toLowerCase().split(" ");
+      // updateCar(searchState);
 
       // filter cards that match search
+      filteredCars = [];
+      console.log(searchState);
+
       load.map((car) => {
+        // console.log(car);
         if (
-          car.make.toLowerCase() === searchState[0] ||
-          car.make.toLowerCase() === searchState[1]
+          car.make.toLowerCase().includes(searchState[0]) ||
+          car.make.toLowerCase().includes(searchState[1])
         ) {
-          filteredCars = [];
           filteredCars.push(car);
-        } else if (
-          car.make.toLowerCase() === "" ||
-          car.make.toLowerCase() === ""
-        ) {
-          filteredCars = myCars;
+          console.log(" XX", filteredCars);
+          // updateCar(car);
+        } else if (searchState[0] === "" || searchState[1] === "") {
+          filteredCars = load;
         }
       });
-      console.log("you searched for:", filteredCars);
-      // pass array of matches to the cards
 
+      // pass array of matches to the cards
       updateCar(filteredCars);
     } catch (error) {
       console.error(error);
     }
   };
 
-  function handleTextChange(event) {
-    const { name, value } = event.target;
-    updateForm({
-      ...formState,
-      [name]: value,
-    });
-  }
-
-  const changeCars = () => {
-    if (!loading && load) {
-      return updateCar(() => load);
-    } else {
-      return updateCar(filteredCars);
-    }
-  };
-
   return (
     <section className="container d-flex justify-content-center flex-column my-2 py-3">
       <div className="search d-flex justify-content-center mb-4">
-        <form
-          id="searchForm"
-          className="searchForm d-flex"
-          onSubmit={handleSearch}
-        >
+        <form id="searchForm" className="searchForm d-flex">
           <input
-            className="searchBar"
+            className="searchBar text-center"
             id="searchInput"
             name="searchInput"
             placeholder="Search Cars"
-            onChange={handleTextChange}
+            onChange={handleSearch}
           />
-          <button className="searchButton" type="submit">
-            Search
-          </button>
         </form>
       </div>
 
-      {filteredCars[0] ? <Card cars={myCars} /> : <Card cars={load} />}
+      {filteredCars.length ? <Card cars={myCars} /> : <Card cars={load} />}
     </section>
   );
 };
